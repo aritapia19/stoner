@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-color: #ffcc00;
+    --secondary-color: #ff9900;
+    --bg-color: #18181b;
+    --text-color: #ffffff;
+    --header-color: #121212;
+    --border-radius: 8px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+}
+
+/* Tema personalizado */
+.bg-primary-custom {
+  background-color: var(--primary-color);
+}
+
+.text-primary-custom {
+  color: var(--primary-color);
+}
+
+.bg-secondary-custom {
+  background-color: var(--secondary-color);
+}
+
+.text-secondary-custom {
+  color: var(--secondary-color);
+}
+
+/* Estilos para componentes específicos */
+.tabs-list {
+  background-color: var(--header-color);
+  border-color: color-mix(in srgb, var(--header-color) 70%, transparent);
+}
+
+.card {
+  background-color: var(--card-bg-color, color-mix(in srgb, var(--header-color) 40%, transparent));
+  border-color: var(--card-border-color, color-mix(in srgb, var(--header-color) 20%, transparent));
+}
+
+.dropdown-menu {
+  background-color: var(--header-color);
+  border-color: color-mix(in srgb, var(--header-color) 70%, transparent);
+}
+
+.input {
+  background-color: color-mix(in srgb, var(--header-color) 20%, transparent);
+  border-color: color-mix(in srgb, var(--header-color) 40%, transparent);
+  color: var(--text-color);
+}
+
+/* Estilos para las pestañas */
+[data-state="active"] {
+  background-color: var(--primary-color) !important;
+  color: #000000 !important;
+}
+
+[data-state="inactive"] {
+  background-color: color-mix(in srgb, var(--header-color) 20%, transparent) !important;
+  color: var(--text-color) !important;
+}
+
+/* Bokeh effect background */
+.bokeh-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
+.bokeh-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 30% 50%,
+      color-mix(in srgb, var(--primary-color) 10%, transparent) 0%,
+      transparent 25%
+    ),
+    radial-gradient(circle at 70% 30%, color-mix(in srgb, var(--secondary-color) 10%, transparent) 0%, transparent 25%);
+}
+
+.bokeh-bg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+      circle at 10% 20%,
+      color-mix(in srgb, var(--primary-color) 30%, transparent) 0%,
+      transparent 20px
+    ),
+    radial-gradient(circle at 80% 30%, color-mix(in srgb, var(--secondary-color) 30%, transparent) 0%, transparent 15px),
+    radial-gradient(circle at 40% 70%, color-mix(in srgb, var(--primary-color) 30%, transparent) 0%, transparent 25px),
+    radial-gradient(circle at 70% 90%, color-mix(in srgb, var(--secondary-color) 30%, transparent) 0%, transparent 18px),
+    radial-gradient(circle at 90% 10%, color-mix(in srgb, var(--primary-color) 30%, transparent) 0%, transparent 12px),
+    radial-gradient(circle at 30% 85%, color-mix(in srgb, var(--secondary-color) 30%, transparent) 0%, transparent 20px),
+    radial-gradient(circle at 60% 40%, color-mix(in srgb, var(--primary-color) 30%, transparent) 0%, transparent 15px);
+  filter: blur(8px);
+}
+
