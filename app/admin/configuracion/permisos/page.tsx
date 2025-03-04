@@ -299,7 +299,6 @@ export default function ConfiguracionPermisosPage() {
               </>
             ) : (
               <Button className="bg-yellow-400 hover:bg-yellow-500 text-zinc-900" onClick={createNewRole}>
-                <UserPlus className="mr-2 h-4 w-4" />} onClick={createNewRole}>
                 <UserPlus className="mr-2 h-4 w-4" />
                 Nuevo Rol
               </Button>

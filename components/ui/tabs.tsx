@@ -35,8 +35,8 @@ const TabsTrigger = React.forwardRef<
       className,
     )}
     style={{
-      backgroundColor: props["data-state"] === "active" ? undefined : style?.backgroundColor,
-      color: props["data-state"] === "active" ? undefined : style?.color,
+      backgroundColor: (props as any)["data-state"] === "active" ? undefined : style?.backgroundColor,
+      color: (props as any)["data-state"] === "active" ? undefined : style?.color,
       ...style,
     }}
     {...props}

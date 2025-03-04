@@ -152,7 +152,7 @@ export default function EmpleadoDashboard() {
                               training.status === "En progreso"
                                 ? "default"
                                 : training.status === "Completada"
-                                  ? "success"
+                                  ? "default"
                                   : "secondary"
                             }
                           >
